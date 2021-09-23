@@ -17,7 +17,18 @@ while( option == "1" or option == "2" or option == "3" or option == "4" ):
         Account.printAllAccountsInfo()
     print( "***** Bank Account MENU *****\n1) Add an account\n2) Deposit to an account\n3) Withdraw from an account" )
     print( "4) See the information of all accounts")
-    option = input( "Select an option: " )    
+    option = input( "Select an option: " )
+
+
+    if( option == "2" ):
+        accountnum = input("Please write you account number:")
+        amount = input("How much would you like to deposit? Enter the amount:")
+        currentAccount = Account.findaccount (int(accountNo))
+        if currentAccount == None:
+            print("this account does not exist")
+        else:
+            currentAccount.deposit(int(amount))
+
 
 print( "End of the program" )
 #michaelUser = User( "Michael", "Miller", 30 )

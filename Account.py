@@ -19,6 +19,7 @@ class Account:
 
     def deposit( self, amount ):
         self.balance += amount
+        print("Deposit Succesfull")
         return self
 
     def printInfo( self ):
@@ -30,6 +31,13 @@ class Account:
     @classmethod
     def changeBankName( cls, newName ):
         cls.bankName = newName
+
+    @classmethod
+    def findaccount (cls, accnum):
+        for currentaccount in cls.allBankAccounts:
+            if currentaccount.accnum == accnum:
+                return currentaccount
+        return None
     
     @classmethod
     def printAllAccountsInfo( cls ):
